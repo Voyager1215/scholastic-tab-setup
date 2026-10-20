@@ -1,0 +1,62 @@
+/*
+ * Design tokens for the whole portal.
+ *
+ * The palette is the white-and-green identity defined in the setup notes:
+ * white background, deep green primary, emerald secondary, pale green
+ * surfaces. Nothing in the app hardcodes a colour — every rule reads from
+ * these variables.
+ */
+
+:root {
+  /* Palette */
+  --color-background: #ffffff;
+  --color-primary: #166534;
+  --color-secondary: #16a34a;
+  --color-surface-green: #f0fdf4;
+  --color-selected: #dcfce7;
+  --color-border: #e5e7eb;
+  --color-text: #1f2937;
+  --color-text-secondary: #64748b;
+
+  /* Derived tints */
+  --color-primary-dark: #14532d;
+  --color-primary-soft: #ecfdf5;
+  --color-danger: #b91c1c;
+  --color-danger-soft: #fef2f2;
+  --color-warning: #b45309;
+  --color-warning-soft: #fffbeb;
+  --color-overlay: rgba(15, 23, 42, 0.45);
+
+  /* Shape */
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-pill: 999px;
+  --border-width: 1px;
+
+  /* Spacing scale (8px base unit) */
+  --spacing-unit: 8px;
+  --space-1: calc(var(--spacing-unit) * 1);
+  --space-2: calc(var(--spacing-unit) * 2);
+  --space-3: calc(var(--spacing-unit) * 3);
+  --space-4: calc(var(--spacing-unit) * 4);
+  --space-6: calc(var(--spacing-unit) * 6);
+  --space-8: calc(var(--spacing-unit) * 8);
+
+  /* Typography */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-base: 1.0625rem;
+  --font-size-lg: 1.375rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.5rem;
+  --line-height-tight: 1.25;
+  --line-height: 1.6;
+
+  /* Interaction */
+  --touch-target: 48px;
+  --shadow-card: 0 1px 2px rgba(22, 101, 52, 0.06), 0 1px 3px rgba(31, 41, 55, 0.05);
+  --shadow-raised: 0 4px 12px rgba(22, 101, 52, 0.1);
+  --focus-ring: 0 0 0 3px rgba(22, 165, 74, 0.35);
+  --transition: 140ms ease;
+}

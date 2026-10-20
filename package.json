@@ -1,0 +1,30 @@
+{
+  "name": "web-portal",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Educational media portal for kiosk tablets (Cloudflare Workers + D1 + R2)",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "worker"
+  ],
+  "scripts": {
+    "dev": "node scripts/ensure-dist.mjs && concurrently -n worker,web -c green,cyan \"npm:dev:worker\" \"npm:dev:web\"",
+    "dev:worker": "wrangler dev",
+    "dev:web": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "deploy": "npm run build && wrangler deploy",
+    "db:create": "wrangler d1 create media-db",
+    "db:migrate:local": "wrangler d1 migrations apply media-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply media-db --remote",
+    "admin:create": "node scripts/create-admin.mjs",
+    "typecheck": "npm run typecheck --workspace worker && npm run typecheck --workspace frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

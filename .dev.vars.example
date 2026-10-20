@@ -1,0 +1,7 @@
+# Local development secrets. Copy to `.dev.vars` (git-ignored) and edit.
+# `.dev.vars` is only read by `wrangler dev`.
+
+# Optional: creates the first administrator automatically on first login
+# attempt when the admins table is empty. Remove after the account exists.
+ADMIN_BOOTSTRAP_USER=admin
+ADMIN_BOOTSTRAP_PASSWORD=change-me-please
